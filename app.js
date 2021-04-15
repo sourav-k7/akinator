@@ -34,14 +34,17 @@ app.post('/ans',async (req,res)=>{
   aki.signature=req.cookies.sign;
   aki.currentStep=parseInt(req.cookies.step);
   aki.frontaddr=req.cookies.addr;
-
+  
   await aki.step(req.body.answer);
   
   res.cookie('step',parseInt(req.cookies.step)+1);
   const question =aki.question;
   if(aki.progress>=90)
   {
-    aki.currentStep+=1;
+    
+    aki.session=req.cookies.session;
+    aki.signature=req.cookies.sign;
+    aki.currentStep =parseInt(req.cookies.step)+1;
    await aki.win();
       const guess = aki.answers[0];
       return  res.render('win',{guess});
