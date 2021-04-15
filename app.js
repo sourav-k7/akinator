@@ -32,8 +32,9 @@ app.get('/start',async (req,res)=>{
     res.render('game',{question});
 })
 app.post('/ans',async (req,res)=>{
-  console.log(req.cookies);
+  
   await aki.step(req.cookies,req.body.answer);
+  console.log(aki.progress);
   res.cookie('step',parseInt(req.cookies.step)+1);
   const question =aki.question;
   if(aki.progress>=90)
