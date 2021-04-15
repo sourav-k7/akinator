@@ -25,9 +25,9 @@ app.get('/start',async (req,res)=>{
     // const sess = data[0];
    
     res.cookie('session',aki.session);
-    // res.cookie('sign',data[1]);
-    // res.cookie('addr',data[2]);
-    // res.cookie('step',data[3]);
+    res.cookie('sign',aki.signature);
+    res.cookie('addr',aki.frontaddr);
+    res.cookie('step',aki.currentStep);
     var question = aki.question;
     res.render('game',{question});
 })
