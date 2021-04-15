@@ -23,8 +23,8 @@ app.get('/start',async (req,res)=>{
   aki= new Aki(region,childMode);
  var data= await aki.start();
     // const sess = data[0];
-    console.log(data);
-    // res.cookie('session',sess);
+   
+    res.cookie('session',aki.session);
     // res.cookie('sign',data[1]);
     // res.cookie('addr',data[2]);
     // res.cookie('step',data[3]);
