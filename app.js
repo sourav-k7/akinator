@@ -3,36 +3,40 @@ const { Aki } = require('aki-api');
 const path = require('path');
 const ejs =require('ejs');
 const engine = require('ejs-mate');
-const cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser')
+const { v4: uuid } = require('uuid');
 const region = 'en';
-let aki ;
 const app = express()
-app.use(cookieParser());
+app.use(cookieParser())
 app.use(express.urlencoded({extended:true}));
 app.engine('ejs',engine);
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 
-
+var userlist=[];
 app.get('/',(req,res)=>{
-  
   res.render('index');
 })
 app.get('/start',async (req,res)=>{
   const childMode=true;
-  aki= new Aki(region,childMode);
-   await aki.start();
-    var question = aki.question;
+  const user = {userid:uuid(),data:new Aki(region,childMode)};
+  userlist.push(user);
+  
+  res.cookie('uid',user.userid);
+   await user.data.start();
+    const question = user.data.question;
     res.render('game',{question});
 })
 app.post('/ans',async (req,res)=>{
- 
- await aki.step(req.body.answer);
-  const question =aki.question;
-  if(aki.progress>=90)
+ const uid =req.cookies.uid;
+ const user=userlist.find((u)=>u.userid==uid)
+ await user.data.step(req.body.answer);
+  const question =user.data.question;
+  if(user.data.progress>=90)
   {
-   await aki.win();
-      const guess = aki.answers[0];
+   await user.data.win();
+      const guess = user.data.answers[0];
+     userlist= userlist.filter((u)=>u!=user);
       return  res.render('win',{guess});
     }
  return res.render('game',{question});
