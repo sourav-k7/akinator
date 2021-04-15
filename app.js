@@ -22,10 +22,10 @@ app.get('/start',async (req,res)=>{
   const childMode=true;
   aki= new Aki(region,childMode);
  var data= await aki.start();
-    res.cookie('session',data[0]);
-    res.cookie('sign',data[1]);
-    res.cookie('addr',data[2]);
-    res.cookie('step',data[3]);
+    // res.cookie('session',data[0]);
+    // res.cookie('sign',data[1]);
+    // res.cookie('addr',data[2]);
+    // res.cookie('step',data[3]);
     var question = aki.question;
     res.render('game',{question});
 })
@@ -36,13 +36,10 @@ app.post('/ans',async (req,res)=>{
   const question =aki.question;
   if(aki.progress>=90)
   {
-    try
-    {await aki.win(req.cookies);
+   await aki.win(req.cookies);
       const guess = aki.answers[0];
-      return  res.render('win',{guess});}
-      catch(error){
-        console.log(error);
-      }
+      return  res.render('win',{guess});
+      
     }
  return res.render('game',{question});
 })
