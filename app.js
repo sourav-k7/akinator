@@ -21,42 +21,19 @@ app.get('/',(req,res)=>{
 app.get('/start',async (req,res)=>{
   const childMode=true;
   aki= new Aki(region,childMode);
- var data= await aki.start();
-    res.cookie('session',aki.session);
-    res.cookie('sign',aki.signature);
-    res.cookie('addr',aki.frontaddr);
-    res.cookie('step',aki.currentStep);
-    res.cookie('uri',aki.uri);
-    res.cookie('urlapi',aki.urlApiWs);
-    res.cookie('uriobj',aki.uriObj);
+   await aki.start();
     var question = aki.question;
     res.render('game',{question});
 })
 app.post('/ans',async (req,res)=>{
-  aki.session=req.cookies.session;
-  aki.signature=req.cookies.sign;
-  aki.currentStep=parseInt(req.cookies.step);
-  aki.frontaddr=req.cookies.addr;
-  aki.uri=req.cookies.uri;
-  aki.uriobj=req.cookies.uriobj;
-  aki.urlApiWs=req.cookies.urlapi;
-  await aki.step(req.body.answer);
-  
-  res.cookie('step',parseInt(req.cookies.step)+1);
+ 
+ await aki.step(req.body.answer);
   const question =aki.question;
   if(aki.progress>=90)
   {
-    
-    aki.session=req.cookies.session;
-    aki.signature=req.cookies.sign;
-    aki.currentStep =parseInt(req.cookies.step)+1;
-     aki.uri=req.cookies.uri;
-  aki.uriobj=req.cookies.uriobj;
-  aki.urlApiWs=req.cookies.urlapi;
    await aki.win();
       const guess = aki.answers[0];
       return  res.render('win',{guess});
-      
     }
  return res.render('game',{question});
 })
