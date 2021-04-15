@@ -32,7 +32,7 @@ app.get('/start',async (req,res)=>{
     res.render('game',{question});
 })
 app.post('/ans',async (req,res)=>{
-  
+  console.log(req.cookies);
   await aki.step(req.cookies,req.body.answer);
   res.cookie('step',parseInt(req.cookies.step)+1);
   const question =aki.question;
