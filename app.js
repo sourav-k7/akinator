@@ -20,7 +20,7 @@ app.get('/',(req,res)=>{
 })
 app.get('/start',async (req,res)=>{
   const childMode=true;
-  aki= new Aki(region);
+  aki= new Aki(region,childMode);
  var data= await aki.start();
     res.cookie('session',aki.session);
     res.cookie('sign',aki.signature);
