@@ -22,8 +22,9 @@ app.get('/start',async (req,res)=>{
   const childMode=true;
   aki= new Aki(region,childMode);
  var data= await aki.start();
-    // res.cookie('session',data[0],{httpOnly:true,domain:'heroku.com'});
-    res.cookie('sign',data[1]);
+    const sess = data[0];
+    res.cookie('session',sess);
+    // res.cookie('sign',data[1]);
     // res.cookie('addr',data[2]);
     // res.cookie('step',data[3]);
     var question = aki.question;
