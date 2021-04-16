@@ -15,11 +15,19 @@ app.set('views',path.join(__dirname,'views'));
 
 var userlist=[];
 app.get('/',(req,res)=>{
+  userlist = userlist.filter((u)=>{
+      if((Date.now()-u.ctime)<3600000){
+        return true;
+      }
+      else{
+        return false;
+      }
+  })
   res.render('index');
 })
 app.get('/start',async (req,res)=>{
   const childMode=true;
-  const user = {userid:uuid(),data:new Aki(region,childMode)};
+  const user = {userid:uuid(),data:new Aki(region,childMode),ctime:Date.now()};
   userlist.push(user);
   
   res.cookie('uid',user.userid);
