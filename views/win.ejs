@@ -1,15 +1,16 @@
 <% layout('boilerplate.ejs') %> 
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="card" >
-                <img src=<%=guess.absolute_picture_path%> class="card-img-top">
-                <div class="card-body">
-                    <h6 class="card-subtitle">I think of </h6>
-                    <h4 class="card-title"><%= guess.name %> </h4>
-                    <h6 class="card-subtitle"><%= guess.description %> </h6>
-                </div>
-            </div>
-            <a href="/" class="btn btn-secondary">Go to Home Page</a>
+   
+        <div class="d-flex align-items-start">
+            <img src="img/win.png" width="600px" height="600px">
+            <span class="speech-left">
+                
+                    <h6>I think of </h6>
+                    <h4><%= guess.name %> </h4>
+                    <h6><%= guess.description %> </h6>
+                    <img src=<%=guess.absolute_picture_path%> class="img-thumbnail">
+            </span>
         </div>
-    </div>
+        <center>
+            <a href="/" class="btnStyle">Go to Home Page</a>
+        </center>
   

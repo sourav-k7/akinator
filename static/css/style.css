@@ -35,7 +35,7 @@ body {
   text-align: center;
   position: relative;
   right: 150px;
-  top: 10px;
+  /* top: 10px; */
 }
 .speech-left:before {
   content: "";
@@ -51,7 +51,7 @@ body {
 .btnStyle {
   text-decoration: none;
   padding: 5px 20px;
-  color: #ffd700;
+  color: #eeca00;
   border-width: 1px;
   border-style: solid;
   border-color: #ffd700;
@@ -59,15 +59,15 @@ body {
 }
 
 .btnStyle:hover {
-  color: #0049b6;
-  border-color: #0049b6;
+  color: #003a91;
+  border-color: #003a91;
 }
 button {
   border: none;
   position: relative;
   background-color:rgba(255, 255, 255, 0.3);
   top: 10px;
-  right: 100px;
+  right: 150px;
   width: 200px;
   text-align: center;
   transition: 0.5s;
