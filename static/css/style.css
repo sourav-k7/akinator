@@ -80,7 +80,7 @@ button:hover {
 }
 @media (max-width: 768px) {
   .smallfont {
-    font-size: 12px;
+    font-size: 15px;
   }
  
   img{
@@ -105,7 +105,13 @@ button:hover {
    top:20px;
    right:100px;
  }
+ .win-img{
+   width: 100px;
+   height: auto;
+ }
   button{
     right:160px;
+    padding:10px 20px;
+    top:0px;
   }
 }
