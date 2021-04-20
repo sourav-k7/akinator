@@ -28,7 +28,6 @@ body {
 }
 .speech-left {
   width: 300px;
-  /* margin: 50px auto; */
   border-radius: 15px;
   background: #0049b6;
   color: #ffd700;
@@ -50,7 +49,6 @@ body {
 }
 
 .btnStyle {
-  /* background-color: #0049b6; */
   text-decoration: none;
   padding: 5px 20px;
   color: #ffd700;
@@ -60,7 +58,22 @@ body {
   border-radius: 10px;
 }
 
-.btnStyle:hover{
-    color:#0049b6;
-    border-color: #0049b6;
+.btnStyle:hover {
+  color: #0049b6;
+  border-color: #0049b6;
+}
+button {
+  border: none;
+  position: relative;
+  background-color:rgba(255, 255, 255, 0.3);
+  top: 10px;
+  right: 100px;
+  width: 200px;
+  text-align: center;
+  transition: 0.5s;
+}
+button:hover{
+  background-color: rgba(252, 229, 170);
+  border-radius: 10px;
+  color: #0049b6;
 }

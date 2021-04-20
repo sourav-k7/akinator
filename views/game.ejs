@@ -1,31 +1,20 @@
 <% layout('boilerplate.ejs') %>
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <%= question %>
-                    </h5>
-                </div>
-                <ul class="list-group list-group-flush" style="text-align: center;">
-                    <form action="/ans" method="POST">
-                    <li class="list-group-item">
-                        <button type="submit" name="answer" value="0" class="btn btn-success">Yes</button>
-                    </li>
-                    <li class="list-group-item">
-                        <button type="submit" name="answer" value="1" class="btn btn-danger">No</button>
-                    </li>
-                    <li class="list-group-item">
-                        <button type="submit" name="answer" value="2" class="btn btn-warning">Don't Know</button>
-                    </li>
-                    <li class="list-group-item">
-                        <button type="submit" name="answer" value="3" class="btn btn-info">Probably</button>
-                    </li>
-                    <li class="list-group-item">
-                        <button type="submit" name="answer" value="4" class="btn btn-secondary">Probably not</button>
-                    </li>
-                    </form> 
-                </ul>
-            </div>
+    <div class="d-flex align-items-center">
+        <div class="">
+            <img src="img/ans.png" width="600px" height="580px">
         </div>
+        <div >
+            <h5 class="speech-left">
+                <%= question %>
+            </h5>
+
+            <form action="/ans" method="POST">
+                <button type="submit" name="answer" value="0" style="border-top: white 3px solid;">Yes</button><br>
+                <button type="submit" name="answer" value="1" >No</button><br>
+                <button type="submit" name="answer" value="2" >Don't Know</button><br>
+                <button type="submit" name="answer" value="3" >Probably</button><br>
+                <button type="submit" name="answer" value="4" style="border-bottom: white 3px solid;">Probably not</button><br>
+            </form>
+        </div>
+
     </div>
