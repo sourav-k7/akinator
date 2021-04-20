@@ -1,13 +1,12 @@
 <% layout('boilerplate.ejs') %> 
    
         <div class="d-flex align-items-start">
-            <img src="img/win.png" width="600px" height="600px">
-            <span class="speech-left">
-                
-                    <h6>I think of </h6>
-                    <h4><%= guess.name %> </h4>
-                    <h6><%= guess.description %> </h6>
-                    <img src=<%=guess.absolute_picture_path%> class="img-thumbnail">
+            <img src="img/win.png" width="600px" height="600px" class="noRight">
+            <span class="speech-left moveright win-speech">
+                    <h6 class="smallfont">I think of </h6>
+                    <h4 class="smallfont"><%= guess.name %> </h4>
+                    <h6 class="smallfont"><%= guess.description %> </h6>
+                    <img src=<%=guess.absolute_picture_path%> class="img-thumbnail noRight">
             </span>
         </div>
         <center>

@@ -6,7 +6,7 @@ body {
 }
 .speech-right {
   width: 300px;
-  /* margin: 50px auto; */
+  
   border-radius: 15px;
   background: #0049b6;
   color: #ffd700;
@@ -35,7 +35,6 @@ body {
   text-align: center;
   position: relative;
   right: 150px;
-  /* top: 10px; */
 }
 .speech-left:before {
   content: "";
@@ -45,9 +44,11 @@ body {
   border-top: 15px solid #0049b6;
   border-bottom: 15px solid transparent;
   left: -16px;
-  top: 20px;
+  top:20px;
 }
-
+.win-speech{
+  top: 120px;
+}
 .btnStyle {
   text-decoration: none;
   padding: 5px 20px;
@@ -65,15 +66,46 @@ body {
 button {
   border: none;
   position: relative;
-  background-color:rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   top: 10px;
   right: 150px;
   width: 200px;
   text-align: center;
   transition: 0.5s;
 }
-button:hover{
+button:hover {
   background-color: rgba(252, 229, 170);
   border-radius: 10px;
   color: #0049b6;
+}
+@media (max-width: 768px) {
+  .smallfont {
+    font-size: 12px;
+  }
+ 
+  img{
+    width:300px;
+    height: 300px;
+    position: relative;
+    right: 75px;
+  }
+  .speech-right
+  {
+    left:0px;
+    width: 200px;
+  }
+  .speech-left{
+    right: 160px;
+    width: 200px;
+  }
+  .noRight{
+    right: 0px;
+  }
+ .moveright{
+   top:20px;
+   right:100px;
+ }
+  button{
+    right:160px;
+  }
 }
