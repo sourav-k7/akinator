@@ -108,6 +108,7 @@ button:hover {
  .win-img{
    width: 100px;
    height: auto;
+   max-width: none;
  }
   button{
     right:160px;
