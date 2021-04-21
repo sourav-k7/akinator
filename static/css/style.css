@@ -80,7 +80,7 @@ button:hover {
 }
 @media (max-width: 768px) {
   .smallfont {
-    font-size: 15px;
+    font-size: 12px;
   }
  
   img{
@@ -103,10 +103,10 @@ button:hover {
   }
  .moveright{
    top:20px;
-   right:100px;
+   right:0px;
  }
  .win-img{
-   width: 100px;
+   width: 150px;
    height: auto;
    max-width: none;
  }
