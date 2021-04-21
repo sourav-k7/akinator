@@ -86,7 +86,10 @@ button:hover {
   .smallfont {
     font-size: 12px;
   }
- 
+  #indexBtn{
+    position: relative;
+    right:75px;
+  }
   img{
     width:300px;
     height: 300px;
