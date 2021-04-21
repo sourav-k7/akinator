@@ -79,6 +79,9 @@ button:hover {
   border-radius: 10px;
   color: #0049b6;
 }
+.sizeBox{
+  height: 50px;
+}
 @media (max-width: 768px) {
   .smallfont {
     font-size: 12px;
@@ -99,6 +102,7 @@ button:hover {
     right: 160px;
     width: 200px;
   }
+  
   .noRight{
     right: 0px;
   }
