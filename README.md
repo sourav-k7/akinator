@@ -1,6 +1,4 @@
 <h1 align='center'>Akinator</h1>
-This is a clone website of the origin [Akinator](https://en.akinator.com/) game.
-
 In this game the player need to think of a famous character , object , animal and the game will ask several question about the character and then it will try to guess the character on the basis of the answer given by the player.
 
 ## Site
